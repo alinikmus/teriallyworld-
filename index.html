@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELNS WORLD - CAPTCHA</title>
+<style>
+* {box-sizing:border-box}
+body {
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#090909,#202020);
+  font-family:Arial,sans-serif;
+  color:white;
+}
+.card {
+  width:90%;
+  max-width:420px;
+  background:#171717;
+  border:1px solid #b58b35;
+  border-radius:18px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 0 35px #000;
+}
+h1 {color:#e5b84b;letter-spacing:3px}
+p {color:#ccc}
+.captcha {
+  background:#292929;
+  padding:18px;
+  border-radius:9px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:25px 0;
+}
+input {width:23px;height:23px}
+button {
+  width:100%;
+  padding:14px;
+  background:#c69a3b;
+  border:0;
+  border-radius:8px;
+  font-weight:bold;
+  font-size:16px;
+}
+#result {color:#e5b84b;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>ELNS WORLD</h1>
+<p>Bot emasligingizni tasdiqlang</p>
+<p>Davom etish uchun tekshiruvdan o'ting.</p>
+
+<div class="captcha">
+<input type="checkbox" id="check">
+<label for="check">Men robot emasman</label>
+</div>
+
+<button onclick="verify()">TASDIQLASH</button>
+<div id="result"></div>
+</div>
+
+<script>
+function verify() {
+ const result = document.getElementById('result');
+ if (!document.getElementById('check').checked) {
+   result.textContent = "Iltimos, tasdiqlang!";
+   return;
+ }
+ result.textContent =
+ "Bu demo CAPTCHA. Haqiqiy server tekshiruvi hali ulanmagan.";
+}
+</script>
+</body>
+</html>
